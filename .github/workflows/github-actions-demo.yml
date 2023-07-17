@@ -14,7 +14,7 @@ jobs:
           terraform_version: 1.2.8
       - name: Download Go Modules
         working-directory: tests
-        run: go mod download
+        run: go mod init tests && go mod tidy
       - name: Run Go Tests
         working-directory: test
         run: go test -v -tags=unit
