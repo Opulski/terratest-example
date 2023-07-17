@@ -17,7 +17,7 @@ func TestTerraformExample2(t *testing.T) {
 	// Clean up resources with "terraform destroy" at the end of the test.
 	defer terraform.Destroy(t, terraformOptions)
 
-	Run `terraform output` to get the values of output variables
+	// Run `terraform output` to get the values of output variables
 	resourceGroupName := terraform.Output(t, terraformOptions, "resource_group_name")
 
 	// Verify the resource group exists
