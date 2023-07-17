@@ -3,10 +3,17 @@ package test
 import (
 	"testing"
 
+	"github.com/gruntwork-io/terratest/modules/azure"
+	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestTerraformExample2(t *testing.T) {
+	t.Parallel()
+
+	// subscriptionID is overridden by the environment variable "ARM_SUBSCRIPTION_ID"
+	subscriptionID := ""
 	// Construct the terraform options with default retryable errors to handle the most common
 	// retryable errors in terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
