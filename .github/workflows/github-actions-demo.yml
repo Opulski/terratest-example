@@ -16,8 +16,8 @@ jobs:
         working-directory: tests
         run: go mod init tests && go mod tidy
       - name: Run Go Tests
-        working-directory: test
-        run: go test -v -tags=unit
+        working-directory: tests
+        run: go test -v
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
