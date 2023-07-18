@@ -9,7 +9,6 @@ import (
 )
 
 func TestTerraformExample2(t *testing.T) {
-	t.Parallel()
 
 	// subscriptionID is overridden by the environment variable "ARM_SUBSCRIPTION_ID"
 	subscriptionID := ""
